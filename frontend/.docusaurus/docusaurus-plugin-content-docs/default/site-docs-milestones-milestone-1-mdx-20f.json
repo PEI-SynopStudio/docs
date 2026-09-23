@@ -1,0 +1,14 @@
+{
+  "id": "milestones/milestone1",
+  "title": "Milestone 1 - Inception",
+  "description": "Hello",
+  "source": "@site/docs/milestones/milestone1.mdx",
+  "sourceDirName": "milestones",
+  "slug": "/milestones/milestone1",
+  "permalink": "/docs/milestones/milestone1",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "frontMatter": {}
+}

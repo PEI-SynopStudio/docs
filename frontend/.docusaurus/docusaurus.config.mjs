@@ -4,9 +4,8 @@
  * Modify the docusaurus.config.js file at your site's root instead.
  */
 export default {
-  "title": "My Site",
-  "tagline": "Dinosaurs are cool",
-  "favicon": "img/favicon.ico",
+  "title": "SynopStudio",
+  "favicon": "images/logo.jpg",
   "future": {
     "v4": {
       "removeLegacyPostBuildHeadAttribute": true,
@@ -29,10 +28,11 @@ export default {
       "gitEagerVcs": true
     }
   },
-  "url": "https://your-docusaurus-site.example.com",
-  "baseUrl": "/",
-  "organizationName": "facebook",
-  "projectName": "docusaurus",
+  "url": "https://pei-synopstudio.github.io",
+  "baseUrl": "/docs/",
+  "organizationName": "PEI-SynopStudio",
+  "projectName": "SynopStudio",
+  "deploymentBranch": "gh-pages",
   "onBrokenLinks": "throw",
   "i18n": {
     "defaultLocale": "en",
@@ -48,22 +48,9 @@ export default {
       {
         "docs": {
           "sidebarPath": "./sidebars.js",
-          "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/"
+          "routeBasePath": "/"
         },
-        "blog": {
-          "showReadingTime": true,
-          "feedOptions": {
-            "type": [
-              "rss",
-              "atom"
-            ],
-            "xslt": true
-          },
-          "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/",
-          "onInlineTags": "warn",
-          "onInlineAuthors": "warn",
-          "onUntruncatedBlogPosts": "warn"
-        },
+        "blog": false,
         "theme": {
           "customCss": "./src/css/custom.css"
         }
@@ -71,32 +58,43 @@ export default {
     ]
   ],
   "themeConfig": {
-    "image": "img/docusaurus-social-card.jpg",
     "colorMode": {
       "respectPrefersColorScheme": true,
       "defaultMode": "light",
       "disableSwitch": false
     },
     "navbar": {
-      "title": "My Site",
+      "title": "SynopStudio",
       "logo": {
-        "alt": "My Site Logo",
-        "src": "img/logo.svg"
+        "alt": "SynopStudio Logo",
+        "src": "images/logo.jpg"
       },
       "items": [
         {
-          "type": "docSidebar",
-          "sidebarId": "tutorialSidebar",
+          "type": "dropdown",
           "position": "left",
-          "label": "Tutorial"
+          "label": "Milestones",
+          "items": [
+            {
+              "type": "doc",
+              "docId": "milestones/milestone1",
+              "label": "M1 - Inception"
+            }
+          ]
         },
         {
-          "to": "/blog",
-          "label": "Blog",
-          "position": "left"
+          "type": "docSidebar",
+          "sidebarId": "minutesSidebar",
+          "position": "left",
+          "label": "Minutes"
         },
         {
-          "href": "https://github.com/facebook/docusaurus",
+          "to": "/calendar",
+          "position": "left",
+          "label": "Calendar"
+        },
+        {
+          "href": "https://github.com/PEI-SynopStudio",
           "label": "GitHub",
           "position": "right"
         }
@@ -105,48 +103,8 @@ export default {
     },
     "footer": {
       "style": "dark",
-      "links": [
-        {
-          "title": "Docs",
-          "items": [
-            {
-              "label": "Tutorial",
-              "to": "/docs/intro"
-            }
-          ]
-        },
-        {
-          "title": "Community",
-          "items": [
-            {
-              "label": "Stack Overflow",
-              "href": "https://stackoverflow.com/questions/tagged/docusaurus"
-            },
-            {
-              "label": "Discord",
-              "href": "https://discordapp.com/invite/docusaurus"
-            },
-            {
-              "label": "X",
-              "href": "https://x.com/docusaurus"
-            }
-          ]
-        },
-        {
-          "title": "More",
-          "items": [
-            {
-              "label": "Blog",
-              "to": "/blog"
-            },
-            {
-              "label": "GitHub",
-              "href": "https://github.com/facebook/docusaurus"
-            }
-          ]
-        }
-      ],
-      "copyright": "Copyright © 2026 My Project, Inc. Built with Docusaurus."
+      "copyright": "Copyright © 2026/2027 SynopStudio - Universidade de Aveiro",
+      "links": []
     },
     "prism": {
       "theme": {
@@ -387,6 +345,7 @@ export default {
   "headTags": [],
   "stylesheets": [],
   "clientModules": [],
+  "tagline": "",
   "titleDelimiter": "|",
   "noIndex": false,
   "markdown": {

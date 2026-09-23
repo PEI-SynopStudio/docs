@@ -1,3 +1,4 @@
+/*
 import clsx from 'clsx';
 import Link from '@docusaurus/Link';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
@@ -37,6 +38,37 @@ export default function Home() {
       <HomepageHeader />
       <main>
         <HomepageFeatures />
+      </main>
+    </Layout>
+  );
+}
+*/
+
+import React from 'react';
+import Link from '@docusaurus/Link';
+import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
+import Layout from '@theme/Layout';
+
+export default function Home() {
+  const { siteConfig } = useDocusaurusContext();
+  return (
+    <Layout
+      title={siteConfig.title}
+      description="Documentação Oficial do Projeto SynopStudio">
+      <main style={{ padding: '4rem 2rem', textAlign: 'center' }}>
+        <h1 style={{ fontSize: '3rem', marginBottom: '1rem' }}>
+          Bem-vindo ao SynopStudio
+        </h1>
+        <p style={{ fontSize: '1.25rem', color: 'var(--ifm-color-emphasis-700)', maxWidth: '600px', margin: '0 auto 2rem' }}>
+          Website oficial de documentação, planeamento de milestones, atas de reuniões e relatórios de projeto.
+        </p>
+        <div>
+          <Link
+            className="button button--primary button--lg"
+            to="/docs/milestones/milestone1">
+            Explorar Milestones 🚀
+          </Link>
+        </div>
       </main>
     </Layout>
   );
