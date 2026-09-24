@@ -96,7 +96,14 @@ export default {
         {
           "href": "https://github.com/PEI-SynopStudio",
           "label": "GitHub",
-          "position": "right"
+          "position": "right",
+          "className": "github-link"
+        },
+        {
+          "href": "https://synopstudio-pei.atlassian.net",
+          "label": "Jira",
+          "position": "right",
+          "className": "jira-link"
         }
       ],
       "hideOnScroll": false

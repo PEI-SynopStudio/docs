@@ -49,24 +49,19 @@ export default [
   },
   {
     path: '/docs/',
-    component: ComponentCreator('/docs/', '894'),
+    component: ComponentCreator('/docs/', '4f3'),
     routes: [
       {
         path: '/docs/',
-        component: ComponentCreator('/docs/', '0ff'),
+        component: ComponentCreator('/docs/', 'b58'),
         routes: [
           {
             path: '/docs/',
-            component: ComponentCreator('/docs/', 'e7e'),
+            component: ComponentCreator('/docs/', 'df0'),
             routes: [
               {
                 path: '/docs/calendar/',
                 component: ComponentCreator('/docs/calendar/', '463'),
-                exact: true
-              },
-              {
-                path: '/docs/intro',
-                component: ComponentCreator('/docs/intro', '942'),
                 exact: true
               },
               {

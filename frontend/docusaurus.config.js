@@ -54,9 +54,9 @@ const config = {
           label: 'Milestones',
           items: [
             {type: "doc", docId: "milestones/milestone1", label: "M1 - Inception"},
-            //{type: "doc", docId: "milestones/milestone2", label: "M2 - Elaboration"},
-            //{type: "doc", docId: "milestones/milestone3", label: "MS3 - Digital Accessibility and Usability (Construction)"},
-            //{type: "doc", docId: "milestones/milestone4", label: "MS4 - MVP (Construction)"},
+            //{type: "docSidebar", docId: "milestones/milestone2", label: "M2 - Elaboration"},
+            //{type: "docSidebar", docId: "milestones/milestone3", label: "MS3 - Digital Accessibility and Usability (Construction)"},
+            //{type: "docSidebar", docId: "milestones/milestone4", label: "MS4 - MVP (Construction)"},
           ],
         },
         {
@@ -65,6 +65,14 @@ const config = {
           position: 'left',
           label: 'Minutes',
         },
+        /*
+        {
+          type: 'docSidebar',
+          sidebarId: 'sprintSidebar',
+          position: 'left',
+          label: 'Sprint',
+        },
+        */
         {
           to: '/calendar',
           position: 'left',
@@ -89,6 +97,13 @@ const config = {
           href: 'https://github.com/PEI-SynopStudio',
           label: 'GitHub',
           position: 'right',
+          className: 'github-link',
+        },
+        {
+          href: 'https://synopstudio-pei.atlassian.net',
+          label: 'Jira',
+          position: 'right',
+          className: 'jira-link',
         }
       ]
   },

@@ -56,33 +56,29 @@
     },
     "config": "config---docs-5-e-9-4ea"
   },
-  "/docs/-894": {
+  "/docs/-4f3": {
     "__comp": "__comp---theme-docs-root-5-e-9-0b6",
     "__context": {
-      "plugin": "plugin---docs-docsaba-31e"
+      "plugin": "plugin---docs-aba-4f5"
     }
   },
-  "/docs/-0ff": {
+  "/docs/-b58": {
     "__comp": "__comp---theme-doc-version-roota-7-b-5de",
     "__props": "__props---docs-11-b-f70"
   },
-  "/docs/-e7e": {
+  "/docs/-df0": {
     "__comp": "__comp---theme-doc-roota-94-67a"
   },
   "/docs/calendar/-463": {
     "__comp": "__comp---theme-doc-item-178-a40",
-    "content": "content---docs-docs-calendar-2-c-5-c40"
-  },
-  "/docs/intro-942": {
-    "__comp": "__comp---theme-doc-item-178-a40",
-    "content": "content---docs-docs-introf-84-194"
+    "content": "content---docs-calendar-2-c-5-1f0"
   },
   "/docs/milestones/milestone1-ac5": {
     "__comp": "__comp---theme-doc-item-178-a40",
-    "content": "content---docs-docs-milestones-milestone-120-f-1a5"
+    "content": "content---docs-milestones-milestone-120-f-1ae"
   },
   "/docs/minutes/minutes1-d79": {
     "__comp": "__comp---theme-doc-item-178-a40",
-    "content": "content---docs-docs-minutes-minutes-1066-44d"
+    "content": "content---docs-minutes-minutes-1066-e70"
   }
 }
