@@ -1,0 +1,12 @@
+# Dependências e Cache
+node_modules/
+.docusaurus/
+.cache-loader/
+
+# Ficheiros de Build
+build/
+dist/
+
+# Variáveis de ambiente
+.env
+.env.local
