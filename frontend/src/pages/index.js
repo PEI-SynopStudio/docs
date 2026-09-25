@@ -71,9 +71,9 @@ export default function Home() {
         </section>
 
 
-        <section style={{ padding: '4rem 0', backgroundColor: 'var(--sy-navy-dark)', color: '#ffffff' }}> 
+        <section style={{ padding: '4rem 0', backgroundColor: 'var(--sy-navy-dark)' }}> 
           <div className="container">
-            <Heading as="h2" style={{ fontSize: '2.6rem', marginBottom: '1rem', textAlign: 'center' }}>
+            <Heading as="h2" style={{ fontSize: '2.6rem', marginBottom: '1rem', textAlign: 'center', color: '#ffffff' }}>
               About Us
             </Heading>
             <p style={{fontSize: '1.15rem',maxWidth: '100%',margin: '0 0 3rem 0',color: 'var(--ifm-color-emphasis-700)',lineHeight: 1.6, textAlign: 'left'}}>

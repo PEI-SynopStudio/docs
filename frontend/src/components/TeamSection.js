@@ -56,7 +56,7 @@ export default function TeamSection() {
         <section style={{ padding: '3rem 0' }}>
             <div className="container">
                 <div className="text--center margin-bottom--xl">
-                    <h2 style={{ fontSize: '2.2rem' }}>Team Members</h2>
+                    <h2 style={{ fontSize: '2.2rem', color: '#ffffff' }}>Team Members</h2>
                 </div>
                 <div className="row" style={{ justifyContent: 'center' }}>
                 {Members.map((member, idx) => (
@@ -64,7 +64,7 @@ export default function TeamSection() {
                 ))}
                 </div>
                 <div className="text--center margin-bottom--lg" style={{ marginTop: '3rem' }}>
-                    <h3 style={{ fontSize: '1.8rem' }}>Advisors</h3>
+                    <h3 style={{ fontSize: '1.8rem', color: '#ffffff' }}>Advisors</h3>
                 </div>
                 <div className="row" style={{ justifyContent: 'center' }}>
                 {Advisors.map((advisor, idx) => (
