@@ -1,30 +1,247 @@
 /**
- * Any CSS included here will be global. The classic template
- * bundles Infima by default. Infima is a CSS framework designed to
- * work well for content-centric websites.
+ * SynopStudio theme — palette derived from the project logo
+ * (indigo → cyan gradient on a deep navy background).
  */
 
-/* You can override the default Infima variables here. */
 :root {
-  --ifm-color-primary: #2e8555;
-  --ifm-color-primary-dark: #29784c;
-  --ifm-color-primary-darker: #277148;
-  --ifm-color-primary-darkest: #205d3b;
-  --ifm-color-primary-light: #33925d;
-  --ifm-color-primary-lighter: #359962;
-  --ifm-color-primary-lightest: #3cad6e;
+  /* --- Brand palette (from the SynopStudio logo) --- */
+  --sy-navy: #171634;
+  --sy-navy-dark: #100f26;
+  --sy-indigo: #5b64f0;
+  --sy-blue: #3f8be0;
+  --sy-cyan: #22d3c4;
+  --sy-gradient: linear-gradient(120deg, var(--sy-indigo) 0%, var(--sy-blue) 50%, var(--sy-cyan) 100%);
+
+  /* Hero: light, airy version of the brand gradient for light mode */
+  --sy-hero-bg: linear-gradient(120deg, #eef1fe 0%, #e3f2fb 50%, #e3fbf8 100%);
+  --sy-hero-text: var(--sy-navy);
+  --sy-hero-title-fill: var(--sy-indigo);
+  --sy-hero-glow: radial-gradient(circle at 15% 20%, rgba(255, 255, 255, 0.6), transparent 45%),
+                  radial-gradient(circle at 85% 80%, rgba(34, 211, 196, 0.15), transparent 55%);
+
+  /* --- Infima overrides: teal/cyan family, closest single hue to the logo --- */
+  --ifm-color-primary: #1fb3ac;
+  --ifm-color-primary-dark: #1ca19b;
+  --ifm-color-primary-darker: #1a9791;
+  --ifm-color-primary-darkest: #157c77;
+  --ifm-color-primary-light: #29c7bf;
+  --ifm-color-primary-lighter: #37cdc6;
+  --ifm-color-primary-lightest: #5cd9d3;
+
   --ifm-code-font-size: 95%;
-  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
+  --ifm-navbar-background-color: var(--sy-navy-dark);/*#ffffff;*/
+  --ifm-footer-background-color: #7bbbeb; /*var(--sy-navy-dark);*/
+  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.5);
 }
 
-/* For readability concerns, you should choose a lighter palette in dark mode. */
 [data-theme='dark'] {
-  --ifm-color-primary: #25c2a0;
-  --ifm-color-primary-dark: #21af90;
-  --ifm-color-primary-darker: #1fa588;
-  --ifm-color-primary-darkest: #1a8870;
-  --ifm-color-primary-light: #29d5b0;
-  --ifm-color-primary-lighter: #32d8b4;
-  --ifm-color-primary-lightest: #4fddbf;
+  --ifm-color-primary: #22d3c4;
+  --ifm-color-primary-dark: #1fbdb0;
+  --ifm-color-primary-darker: #1db2a6;
+  --ifm-color-primary-darkest: #189289;
+  --ifm-color-primary-light: #3fdccf;
+  --ifm-color-primary-lighter: #55e0d4;
+  --ifm-color-primary-lightest: #8bebe2;
+
+  --ifm-background-color: var(--ifm-color-emphasis-100);
+  --ifm-navbar-background-color: var(--sy-navy);
+  --ifm-footer-background-color: var(--sy-navy);
+  --ifm-color-emphasis-100: #221f47;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
+}
+
+/* --- Navbar --- */
+.navbar {
+  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.08);
+}
+
+[data-theme='dark'] .navbar {
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.08);
+}
+
+.navbar__brand .navbar__title {
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  background: var(--sy-gradient);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.navbar__logo img {
+  border-radius: 6px;
+}
+
+.navbar .navbar__link,
+.navbar .navbar__item,
+.navbar .navbar__toggle {
+  color: #e3e8fc;
+}
+
+.navbar .navbar__link:hover,
+.navbar .navbar__link--active {
+  color: var(--sy-cyan);
+}
+
+/* Icon links (GitHub / Jira) in the navbar */
+.navbar__item.navbar__link.github-link,
+.navbar__item.navbar__link.jira-link,
+a.navbar__link.github-link,
+a.navbar__link.jira-link {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+/* Color mode toggle: navbar is always dark, so force the icon to stay light-colored in both themes */
+.navbar button[class*='toggle'] svg,
+.navbar [class*='colorModeToggle'] svg,
+.navbar .clean-btn svg {
+  color: #ffffff;
+  fill: #ffffff;
+}
+
+.github-link::before,
+.jira-link::before {
+  content: '';
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  background-color: #ffffff;
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  -webkit-mask-size: contain;
+  mask-size: contain;
+  -webkit-mask-position: center;
+  mask-position: center;
+}
+
+.github-link::before {
+  -webkit-mask-image: url("https://cdn.jsdelivr.net/npm/simple-icons@v13/icons/github.svg");
+  mask-image: url("https://cdn.jsdelivr.net/npm/simple-icons@v13/icons/github.svg");
+}
+
+.jira-link::before {
+  background-color: #2684ff;
+  -webkit-mask-image: url("https://cdn.jsdelivr.net/npm/simple-icons@v13/icons/jira.svg");
+  mask-image: url("https://cdn.jsdelivr.net/npm/simple-icons@v13/icons/jira.svg");
+}
+
+/* --- Hero --- */
+.hero--primary {
+  background: var(--sy-hero-bg);
+  position: relative;
+  overflow: hidden;
+}
+
+[data-theme='dark'] .hero--primary {
+  --sy-hero-bg: var(--sy-gradient);
+}
+
+.hero--primary::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: var(--sy-hero-glow);
+  pointer-events: none;
+}
+
+[data-theme='dark'] .hero--primary::before {
+  --sy-hero-glow: radial-gradient(circle at 15% 20%, rgba(255, 255, 255, 0.18), transparent 45%),
+                  radial-gradient(circle at 85% 80%, rgba(0, 0, 0, 0.25), transparent 55%);
+}
+
+.hero--primary .hero__title {
+  position: relative;
+  color: var(--sy-hero-title-fill);
+}
+
+[data-theme='dark'] .hero--primary .hero__title {
+  color: #ffffff;
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.25);
+}
+
+.hero--primary p {
+  position: relative;
+  color: var(--sy-hero-text);
+}
+
+[data-theme='dark'] .hero--primary p {
+  color: #ffffff;
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.25);
+}
+
+.hero--primary .button--secondary {
+  background: var(--sy-indigo);
+  color: #ffffff;
+  border: none;
+}
+
+.hero--primary .button--secondary:hover {
+  background: var(--sy-blue);
+}
+
+.hero--primary .button--outline.button--secondary {
+  color: var(--sy-indigo);
+  border-color: var(--sy-indigo);
+}
+
+.hero--primary .button--outline.button--secondary:hover {
+  background: rgba(91, 100, 240, 0.1);
+}
+
+[data-theme='dark'] .hero--primary .button--secondary {
+  background: #ffffff;
+  color: var(--sy-indigo);
+}
+
+[data-theme='dark'] .hero--primary .button--secondary:hover {
+  background: rgba(255, 255, 255, 0.9);
+}
+
+[data-theme='dark'] .hero--primary .button--outline.button--secondary {
+  color: #ffffff;
+  border-color: #ffffff;
+}
+
+[data-theme='dark'] .hero--primary .button--outline.button--secondary:hover {
+  background: rgba(255, 255, 255, 0.15);
+}
+
+/* --- Cards --- */
+.card {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  border-top: 3px solid transparent;
+  border-image: var(--sy-gradient);
+  border-image-slice: 1;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 24px rgba(34, 211, 196, 0.18);
+}
+
+/* --- Team members: force 5 across on desktop --- */
+.person-col-5 {
+  flex: 0 0 20%;
+  max-width: 20%;
+}
+
+@media screen and (max-width: 996px) {
+  .person-col-5 {
+    flex: 0 0 33.3333%;
+    max-width: 33.3333%;
+  }
+}
+
+@media screen and (max-width: 640px) {
+  .person-col-5 {
+    flex: 0 0 50%;
+    max-width: 50%;
+  }
+}
+
+/* --- Footer --- */
+.footer--dark {
+  --ifm-footer-background-color: var(--sy-navy-dark);
 }

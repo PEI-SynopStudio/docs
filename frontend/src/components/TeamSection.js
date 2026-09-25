@@ -2,42 +2,46 @@ import React from 'react';
 import Link from '@docusaurus/Link';
 
 const Members = [
-    { name: 'David Monteiro', role: 'Scrum Master', img: '', github: 'https://github.com/DavidMonteiro11'},
-    { name: 'Tomás Lopes', role: '', img: '', github: 'https://github.com/tomaslopes11'},
-    { name: 'Murilo Frezzato', role: 'DevOps', img: '', github: 'https://github.com/mfrezzato'},
-    { name: 'Daniel Duque', role: '', img: '', github: 'https://github.com/DukDani'},
-    { name: 'Lucas Reis', role: 'Product Owner', img: '', github: 'https://github.com/LMorgsdR'},
+    { name: 'David Monteiro', role: 'Scrum Master', img: '', link: 'https://github.com/DavidMonteiro11', nmec: '125794'},
+    { name: 'Tomás Lopes', role: 'Architect', img: '', link: 'https://github.com/tomaslopes11', nmec: '125596'},
+    { name: 'Murilo Frezzato', role: 'DevOps', img: '', link: 'https://github.com/mfrezzato', nmec: '125487'},
+    { name: 'Daniel Duque', role: 'QA and Testing', img: '', link: 'https://github.com/DukDani', nmec: '124880'},
+    { name: 'Lucas Reis', role: 'Product Owner', img: '', link: 'https://github.com/LMorgsdR', nmec: '126287'},
 ]
 
 const Advisors = [
-    { name: 'Diogo Gomes', role: 'Advisor', img: '', github: ''},
-    { name: 'Rui Raposo', role: 'Advisor', img: '', github: ''},
+    { name: 'Diogo Gomes', role: 'Advisor', img: '', link: 'https://diogogomes.com/', nmec: ''},
+    { name: 'Rui Raposo', role: 'Advisor', img: '', link: '', nmec: ''},
 ]
 
-function PersonCard({name, role, img, github}) {
+function PersonCard({name, role, img, link, nmec}) {
     const initials = name.split(' ').map((n) => n[0]).slice(0,2).join('')
 
     return (
-        <div className="col col--4 margin-bottom--lg">
-            <div className="card shadow--md" style={{ height: '100%', display: 'flex', flexDirection: 'column', alignItems: 'center', textAlign: 'center', padding: '1.5rem',borderRadius: '12px'}}>
+        <div className="col person-col-5 margin-bottom--lg">
+            <div className="card shadow--md" style={{ height: '100%', minHeight: '260px', minWidth: '200px', display: 'flex', flexDirection: 'column', alignItems: 'center', textAlign: 'center', padding: '2.2rem 1.5rem',borderRadius: '12px'}}>
                 {img ? (
-                <img src={img} alt={name} style={{width: '85px',height: '85px',borderRadius: '50%',objectFit: 'cover',marginBottom: '1rem',boxShadow: '0 4px 10px rgba(0,0,0,0.1)'}}/>
+                <img src={img} alt={name} style={{width: '110px',height: '110px',borderRadius: '50%',objectFit: 'cover',marginBottom: '1rem',boxShadow: '0 4px 10px rgba(0,0,0,0.1)'}}/>
                 ) : (
-                <div style={{width: '85px',height: '85px',borderRadius: '50%',backgroundColor: 'var(--ifm-color-primary-lightest)',color: 'var(--ifm-color-primary-darkest)',display: 'flex',alignItems: 'center',justifyContent: 'center',fontSize: '1.8rem',fontWeight: 'bold',marginBottom: '1rem',}}>
+                <div style={{width: '110px',height: '110px',borderRadius: '50%',backgroundColor: 'var(--ifm-color-primary-lightest)',color: 'var(--ifm-color-primary-darkest)',display: 'flex',alignItems: 'center',justifyContent: 'center',fontSize: '1.8rem',fontWeight: 'bold',marginBottom: '1rem',}}>
                     {initials}
                 </div>
                 )}
                 
                 <div className="card__body" style={{ padding: 0, width: '100%' }}>
                 <h3 style={{ marginBottom: '0.25rem', fontSize: '1.25rem' }}>{name}</h3>
+                {nmec && (
+                    <p style={{ margin: 0, fontWeight: '500', color: 'var(--sy-blue)', fontSize: '1rem' }}>({nmec})</p>
+                )}
                 {role && (
                     <p style={{ margin: 0, fontWeight: '600', color: 'var(--ifm-color-primary)', fontSize: '0.95rem' }}>{role}</p>
                 )}
                 </div>
 
-                {github && (
+
+                {link && (
                     <div style={{ marginTop: 'auto', paddingTop: '1.2rem' }}>
-                        <Link className="button button--secondary button--sm" href={github} target="_blank" rel="noopener noreferrer" style={{ display: 'inline-flex', alignItems: 'center', gap: '0.4rem' }}>
+                        <Link className="button button--secondary button--sm" href={link} target="_blank" rel="noopener noreferrer" style={{ display: 'inline-flex', alignItems: 'center', gap: '0.4rem' }}>
                             <span>GitHub</span> &rarr;
                         </Link>
                     </div>

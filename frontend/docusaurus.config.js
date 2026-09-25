@@ -2,7 +2,8 @@ import {themes as prismThemes} from 'prism-react-renderer';
 
 const config = {
   title: 'SynopStudio',
-  favicon: 'images/logo.jpg',
+  favicon: 'images/logo.png',
+
 
   future: {
     v4: true, 
@@ -38,6 +39,7 @@ const config = {
 
   themeConfig: {
     colorMode: {
+      defaultMode: 'dark',
       respectPrefersColorScheme: true,
     },
 
@@ -45,8 +47,9 @@ const config = {
       title: 'SynopStudio',
       logo: {
         alt: 'SynopStudio Logo',
-        src: 'images/logo.jpg', // substituir
+        src: 'images/logo.png',   
       },
+      //style: 'dark',
       items: [
         {
           type: 'dropdown',
@@ -54,9 +57,9 @@ const config = {
           label: 'Milestones',
           items: [
             {type: "doc", docId: "milestones/milestone1", label: "M1 - Inception"},
-            //{type: "docSidebar", docId: "milestones/milestone2", label: "M2 - Elaboration"},
-            //{type: "docSidebar", docId: "milestones/milestone3", label: "MS3 - Digital Accessibility and Usability (Construction)"},
-            //{type: "docSidebar", docId: "milestones/milestone4", label: "MS4 - MVP (Construction)"},
+            //{type: "doc", docId: "milestones/milestone2", label: "M2 - Elaboration"},
+            //{type: "doc", docId: "milestones/milestone3", label: "MS3 - Digital Accessibility and Usability (Construction)"},
+            //{type: "doc", docId: "milestones/milestone4", label: "MS4 - MVP (Construction)"},
           ],
         },
         {
@@ -87,8 +90,7 @@ const config = {
         */
         /*
         {
-          type: 'doc',
-          docId: 'report',
+          to: '/report',
           position: 'left',
           label: 'Report',
         },
@@ -109,7 +111,7 @@ const config = {
   },
     
   footer: {
-    style: 'dark',
+    //style: 'dark',
     copyright: `Copyright © 2026/2027 SynopStudio - Universidade de Aveiro`,
   },
   prism: {

@@ -10,19 +10,19 @@ const projectHighlights = [
   {
     icon: '🚩',
     title: 'Milestones',
-    description: 'Acompanhe as fases de Inception, Elaboration e Construction do projeto.',
+    description: 'Track the progress of the project and important deliverables.',
     link: '/docs/milestones/milestone1',
   },
   {
     icon: '📝',
     title: 'Minutes',
-    description: 'Registo completo de todas as reuniões de equipa',
+    description: 'Meeting notes and summaries of the project meetings.',
     link: '/docs/minutes',
   },
   {
     icon: '📅',
-    title: 'Calendário',
-    description: 'Datas-chave, prazos de entrega e planeamento temporal do semestre.',
+    title: 'Calendar',
+    description: 'Upcoming events and deadlines.',
     link: '/docs/calendar',
   },
 ];
@@ -41,14 +41,9 @@ export default function Home() {
           <Heading as="h1" className="hero__title" style={{ fontSize: '3.5rem' }}>
             {siteConfig.title}
           </Heading>
-          <div style={{ display: 'flex', gap: '1rem', justifyContent: 'center', flexWrap: 'wrap' }}>
-            <Link className="button button--secondary button--lg" to="/docs/milestones/milestone1">
-              Ver Milestones 🚀
-            </Link>
-            <Link className="button button--outline button--secondary button--lg" to="/reports/relatorio_final.pdf">
-              Relatório Final (PDF) 📄
-            </Link>
-          </div>
+          <p style={{ fontSize: '1.5rem', fontWeight: 500, marginTop: '-0.5rem' }}>
+            PEI - Universidade de Aveiro
+          </p>
         </div>
       </header>
 
@@ -65,7 +60,7 @@ export default function Home() {
                     <p style={{ color: 'var(--ifm-color-emphasis-700)' }}>{item.description}</p>
                     <div style={{ marginTop: 'auto' }}>
                       <Link className="button button--link" to={item.link}>
-                        Aceder &rarr;
+                        Access &rarr;
                       </Link>
                     </div>
                   </div>
@@ -76,12 +71,15 @@ export default function Home() {
         </section>
 
 
-        <section style={{ padding: '4rem 0', backgroundColor: 'var(--ifm-color-emphasis-100)' }}>
-          <div className="container text--center">
-            <Heading as="h2" style={{ marginBottom: '1rem' }}>
+        <section style={{ padding: '4rem 0', backgroundColor: 'var(--sy-navy-dark)', color: '#ffffff' }}> 
+          <div className="container">
+            <Heading as="h2" style={{ fontSize: '2.6rem', marginBottom: '1rem', textAlign: 'center' }}>
               About Us
             </Heading>
-
+            <p style={{fontSize: '1.15rem',maxWidth: '100%',margin: '0 0 3rem 0',color: 'var(--ifm-color-emphasis-700)',lineHeight: 1.6, textAlign: 'left'}}>
+              We are a team of students from the University of Aveiro, working on the SynopStudio project as part of our PEI (Projeto de Engenharia Informática) course.<br/>
+              Our goal is to develop an AI tool that can help to edit and summarize large videos to create short and concise summaries, making it easier for users to consume the content.
+            </p>
             <div className="row" style={{ justifyContent: 'center' }}>
               <TeamSection />
             </div>
