@@ -17,7 +17,7 @@ const projectHighlights = [
     icon: '📝',
     title: 'Minutes',
     description: 'Meeting notes and summaries of the project meetings.',
-    link: '/docs/minutes',
+    link: '/docs/minutes/minutes1',
   },
   {
     icon: '📅',

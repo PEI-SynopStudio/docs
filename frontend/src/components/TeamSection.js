@@ -9,9 +9,9 @@ const Members = [
     { name: 'Lucas Reis', role: 'Product Owner', img: '', link: 'https://github.com/LMorgsdR', nmec: '126287'},
 ]
 
-const Advisors = [
-    { name: 'Diogo Gomes', role: 'Advisor', img: '', link: 'https://diogogomes.com/', nmec: ''},
-    { name: 'Rui Raposo', role: 'Advisor', img: '', link: '', nmec: ''},
+const Supervisors = [
+    { name: 'Diogo Gomes', role: 'Supervisor', img: '', link: 'https://diogogomes.com/', nmec: ''},
+    { name: 'Rui Raposo', role: 'Supervisor', img: '', link: '', nmec: ''},
 ]
 
 function PersonCard({name, role, img, link, nmec}) {
@@ -64,11 +64,11 @@ export default function TeamSection() {
                 ))}
                 </div>
                 <div className="text--center margin-bottom--lg" style={{ marginTop: '3rem' }}>
-                    <h3 style={{ fontSize: '1.8rem', color: '#ffffff' }}>Advisors</h3>
+                    <h3 style={{ fontSize: '1.8rem', color: '#ffffff' }}>Supervisors</h3>
                 </div>
                 <div className="row" style={{ justifyContent: 'center' }}>
-                {Advisors.map((advisor, idx) => (
-                    <PersonCard key={idx} {...advisor} />
+                {Supervisors.map((supervisor, idx) => (
+                    <PersonCard key={idx} {...supervisor} />
                 ))}
                 </div>
             </div>
