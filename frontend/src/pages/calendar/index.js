@@ -13,13 +13,13 @@ export default function Calendar() {
             className={`button ${tab === 'calendar' ? 'button--primary' : 'button--secondary'}`}
             onClick={() => setTab('calendar')}
           >
-            📅 Calendar
+            Calendar
           </button>
           <button
             className={`button ${tab === 'tasks' ? 'button--primary' : 'button--secondary'}`}
             onClick={() => setTab('tasks')}
           >
-            📝 Task List
+            TaskList
           </button>
         </div>
 
@@ -60,7 +60,7 @@ export default function Calendar() {
             </div>
             <p>Below you can check our task list (PDF).</p>
             <iframe
-              src="/docs/files/TaskList.pdf#toolbar=0&navpanes=0&scrollbar=0"
+              src="/docs/files/PEI-Tasklist-SynopStudio.pdf#toolbar=0&navpanes=0&scrollbar=0"
               className={styles.viewer}
               title="Task List"
             />
