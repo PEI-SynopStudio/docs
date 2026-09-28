@@ -2,11 +2,11 @@ import React from 'react';
 import Link from '@docusaurus/Link';
 
 const Members = [
-    { name: 'David Monteiro', role: 'Scrum Master', img: '', link: 'https://github.com/DavidMonteiro11', nmec: '125794'},
-    { name: 'Tomás Lopes', role: 'Architect', img: '', link: 'https://github.com/tomaslopes11', nmec: '125596'},
-    { name: 'Murilo Frezzato', role: 'DevOps', img: '', link: 'https://github.com/mfrezzato', nmec: '125487'},
-    { name: 'Daniel Duque', role: 'QA and Testing', img: '', link: 'https://github.com/DukDani', nmec: '124880'},
-    { name: 'Lucas Reis', role: 'Product Owner', img: '', link: 'https://github.com/LMorgsdR', nmec: '126287'},
+    { name: 'David Monteiro', role: 'Scrum Master', img: '/static/images/David.jpeg', link: 'https://github.com/DavidMonteiro11', nmec: '125794'},
+    { name: 'Tomás Lopes', role: 'Architect', img: '/static/images/Tomas.png', link: 'https://github.com/tomaslopes11', nmec: '125596'},
+    { name: 'Murilo Frezzato', role: 'DevOps', img: '/static/images/Murilo.jpeg', link: 'https://github.com/mfrezzato', nmec: '125487'},
+    { name: 'Daniel Duque', role: 'QA and Testing', img: '/static/images/Daniel.jpeg', link: 'https://github.com/DukDani', nmec: '124880'},
+    { name: 'Lucas Reis', role: 'Product Owner', img: '/static/images/Lucas.jpeg', link: 'https://github.com/LMorgsdR', nmec: '126287'},
 ]
 
 const Supervisors = [
