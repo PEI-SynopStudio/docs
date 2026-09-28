@@ -1,2 +1,0 @@
-# Docs
-Official Documentation
