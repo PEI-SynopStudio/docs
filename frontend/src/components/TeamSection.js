@@ -2,16 +2,16 @@ import React from 'react';
 import Link from '@docusaurus/Link';
 
 const Members = [
-    { name: 'David Monteiro', role: 'Scrum Master', img: '/static/images/David.jpeg', link: 'https://github.com/DavidMonteiro11', nmec: '125794'},
-    { name: 'Tomás Lopes', role: 'Architect', img: '/static/images/Tomas.png', link: 'https://github.com/tomaslopes11', nmec: '125596'},
-    { name: 'Murilo Frezzato', role: 'DevOps', img: '/static/images/Murilo.jpeg', link: 'https://github.com/mfrezzato', nmec: '125487'},
-    { name: 'Daniel Duque', role: 'QA and Testing', img: '/static/images/Daniel.jpeg', link: 'https://github.com/DukDani', nmec: '124880'},
-    { name: 'Lucas Reis', role: 'Product Owner', img: '/static/images/Lucas.jpeg', link: 'https://github.com/LMorgsdR', nmec: '126287'},
+    { name: 'David Monteiro', role: 'Scrum Master', img: 'images/David.jpeg', link: 'https://github.com/DavidMonteiro11', nmec: '125794'},
+    { name: 'Tomás Lopes', role: 'Architect', img: 'images/Tomas.png', link: 'https://github.com/tomaslopes11', nmec: '125596'},
+    { name: 'Murilo Frezzato', role: 'DevOps', img: 'images/Murilo.jpeg', link: 'https://github.com/mfrezzato', nmec: '125487'},
+    { name: 'Daniel Duque', role: 'QA and Testing', img: 'images/Daniel.jpeg', link: 'https://github.com/DukDani', nmec: '124880'},
+    { name: 'Lucas Reis', role: 'Product Owner', img: 'images/Lucas.jpeg', link: 'https://github.com/LMorgsdR', nmec: '126287'},
 ]
 
 const Supervisors = [
-    { name: 'Diogo Gomes', role: 'Supervisor', img: '', link: 'https://diogogomes.com/', nmec: ''},
-    { name: 'Rui Raposo', role: 'Supervisor', img: '', link: '', nmec: ''},
+    { name: 'Diogo Gomes', role: 'Supervisor', img: 'images/diogogomes.png', link: 'https://diogogomes.com/', nmec: ''},
+    { name: 'Rui Raposo', role: 'Supervisor', img: 'images/raposo.png', link: 'https://www.ua.pt/pt/p/10315353', nmec: ''},
 ]
 
 function PersonCard({name, role, img, link, nmec}) {
@@ -42,7 +42,7 @@ function PersonCard({name, role, img, link, nmec}) {
                 {link && (
                     <div style={{ marginTop: 'auto', paddingTop: '1.2rem' }}>
                         <Link className="button button--secondary button--sm" href={link} target="_blank" rel="noopener noreferrer" style={{ display: 'inline-flex', alignItems: 'center', gap: '0.4rem' }}>
-                            <span>GitHub</span> &rarr;
+                            <span>Link</span>
                         </Link>
                     </div>
                 )}
