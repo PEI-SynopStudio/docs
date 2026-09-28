@@ -1,8 +1,10 @@
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
 # Milestone 1 - Inception
 
 <div style={{ width: '100%', height: '800px', margin: '2rem 0' }}>
   <iframe
-    src="/reports/milestone1.pdf"
+    src={useBaseUrl('/reports/PEI-Milestone1-SynopStudio.pdf')}
     width="100%"
     height="100%"
     style={{ border: '1px solid var(--ifm-color-emphasis-300)', borderRadius: '8px' }}
@@ -10,13 +12,10 @@
   />
 </div>
 
-<p>
-  Se o visualizador não carregar no seu navegador:
-</p>
 <div style={{ margin: '1.5rem 0', display: 'flex', gap: '1rem' }}>
   <a 
     className="button button--primary button--md" 
-    href="/reports/milestone1.pdf" 
+    href={useBaseUrl('/reports/PEI-Milestone1-SynopStudio.pdf')} 
     target="_blank" 
     rel="noopener noreferrer"
   >
@@ -24,7 +23,7 @@
   </a>
   <a 
     className="button button--secondary button--md" 
-    href="/reports/milestone1.pdf" 
+    href={useBaseUrl('/reports/PEI-Milestone1-SynopStudio.pdf')} 
     download="SynopStudio_Milestone1.pdf"
   >
     Download (PDF)
@@ -33,15 +32,12 @@
 
 ## 1. Slides
 
----
 ## 2. Context
 
 ## 3. Problem
 
 ## 4. Goals
 
-
 ## 5. Expected Results
 
 ## 6. Related Work
-
