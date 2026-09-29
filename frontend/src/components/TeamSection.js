@@ -2,7 +2,7 @@ import React from 'react';
 import Link from '@docusaurus/Link';
 
 const Members = [
-    { name: 'David Monteiro', role: 'Scrum Master', img: 'images/David.jpeg', link: 'https://github.com/DavidMonteiro11', nmec: '125794'},
+    { name: 'David Monteiro', role: 'Scrum Master', img: 'images/David.jpeg', link: 'https://github.com/DavidMonteiro11', nmec: '125793'},
     { name: 'Tomás Lopes', role: 'Architect', img: 'images/Tomas.png', link: 'https://github.com/tomaslopes11', nmec: '125596'},
     { name: 'Murilo Frezzato', role: 'DevOps', img: 'images/Murilo.jpeg', link: 'https://github.com/mfrezzato', nmec: '125487'},
     { name: 'Daniel Duque', role: 'QA and Testing', img: 'images/Daniel.jpeg', link: 'https://github.com/DukDani', nmec: '124880'},
