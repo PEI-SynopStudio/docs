@@ -49,7 +49,7 @@ export default function Calendar() {
             <div className={styles.header}>
               <h1 className={styles.title}>Task List</h1>
               <a
-                href="/docs/files/TaskList.pdf"
+                href="/docs/files/PEI-Tasklist-SynopStudio.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
                 download
