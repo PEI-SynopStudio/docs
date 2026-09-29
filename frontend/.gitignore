@@ -2,6 +2,7 @@
 node_modules/
 .docusaurus/
 .cache-loader/
+.idea/
 
 # Ficheiros de Build
 build/
