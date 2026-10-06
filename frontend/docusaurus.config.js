@@ -57,7 +57,7 @@ const config = {
           label: 'Milestones',
           items: [
             {type: "doc", docId: "milestones/milestone1", label: "M1 - Inception"},
-            //{type: "doc", docId: "milestones/milestone2", label: "M2 - Elaboration"},
+            {type: "doc", docId: "milestones/milestone2", label: "M2 - Elaboration"},
             //{type: "doc", docId: "milestones/milestone3", label: "MS3 - Digital Accessibility and Usability (Construction)"},
             //{type: "doc", docId: "milestones/milestone4", label: "MS4 - MVP (Construction)"},
           ],
@@ -68,14 +68,6 @@ const config = {
           position: 'left',
           label: 'Minutes',
         },
-        /*
-        {
-          type: 'docSidebar',
-          sidebarId: 'sprintSidebar',
-          position: 'left',
-          label: 'Sprint',
-        },
-        */
         {
           to: '/calendar',
           position: 'left',
