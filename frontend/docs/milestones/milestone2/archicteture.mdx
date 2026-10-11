@@ -28,12 +28,10 @@ Third-party services (email, video sources and AI models) are outside the system
 
 The Frontend is a web application built with **React** and **TypeScript**, and the only part of the system the user interacts with. 
 It communicates with the system through the Reverse Proxy, using HTTP requests for the REST API and a WebSocket connection to receive real-time notifications. 
-It is deployed outside the Docker environment.
 
 ### Reverse Proxy (Traefik)
 
 The Reverse Proxy, built with **Traefik**, connects the Frontend to the Backend and redirects the user's login to the Identity Provider. 
-Like the Frontend, it is deployed outside the Docker environment.
 
 ### Identity Provider (Keycloak)
 
@@ -77,21 +75,21 @@ The Backend publishes a job as an AMQP message and a Worker consumes it. When a 
 
 ### Workers (Python, Whisper and FFmpeg)
 
-The Workers are independent processing modules, each responsible for one stage of the pipeline. 
+The Workers are independent processing modules. 
 They are built with **Python**, and use **FFmpeg** to encode and decode media and **FFprobe** to check file integrity.
 
-1. **Ingestion**: checks the integrity of the video, extracts the audio and generates a proxy video.
-2. **Document Parsing**: extracts text and domain terminology (keywords and acronyms) from the auxiliary documents.
-3. **Audio and Speech**: uses **Whisper** to produce synchronised transcripts and identifies who is speaking in each segment.
-4. **AI and Summarization**: segments the content and generates summaries according to the user's settings.
-5. **Highlight Scoring**: scores the candidate segments and records the rationale for each proposal.
-6. **Video Rendering and Reframing**: reframes the video according to the user's settings and renders the final clips with subtitles.
+- **Ingestion**: checks the integrity of the video, extracts the audio and generates a proxy video.
+- **Document Parsing**: extracts text and domain terminology (keywords and acronyms) from the auxiliary documents.
+- **Audio and Speech**: uses **Whisper** to produce synchronised transcripts and identifies who is speaking in each segment.
+- **AI and Summarization**: segments the content and generates summaries according to the user's settings.
+- **Highlight Scoring**: scores the candidate segments and records the rationale for each proposal.
+- **Video Rendering and Reframing**: reframes the video according to the user's settings and renders the final clips with subtitles.
 
 Each Worker consumes its jobs from the Message Broker, reads and writes media in the Object Storage, and publishes its results back to the broker. 
 
 ### External API
 
-This block contains the third-party services used by the system, all outside the Docker environment.
+This block contains the third-party services used by the system.
 
 - **Email**: sends notifications to the user, such as job completion or failure.
 - **Video Sources**: authorised video platforms from which a video can be imported through a link.
