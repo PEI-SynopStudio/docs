@@ -1,24 +1,25 @@
-# Meeting 1
+---
+title: Meeting 1
+sidebar_label: Meeting 1 (23 Sep)
+sidebar_position: 1
+description: Context and problem clarification, roles, goals and repository setup.
+---
+
+import { MeetingDetails, Attendance, Topics } from '@site/src/components/MeetingDetails';
+
 ## 1. Information
-**Date:** 23/09/2026
 
-**Time**: 15:30
-
-**Group:** 15 
-
-**With Supervisors**: No
-
-**Local:** In-person in Library 
+<MeetingDetails date='23/09/2026' time='15:30' location='In-person in Library' />
 
 ## 2. Attendance
-* [X] David Saraiva Monteiro (125793) 
-* [X] Tomás Manuel Chaves Lopes (125596) 
-* [X] Murilo Frezzato Francisco (125487) 
-* [X] Lucas Morgado dos Reis (126287) 
-* [X] Daniel Fidalgo Duque (124880)
+{/*
+<Attendance 
+  absent={['124880']} 
+  justification={{ '124880': 'Doença' }} 
+/>
+*/}
 
-> Everyone was present at this weekly meeting.
-
+<Attendance />
 
 ## 3. Topics
 - Context and Problem clarification

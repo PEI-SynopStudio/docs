@@ -1,0 +1,27 @@
+---
+title: Flowcharts
+sidebar_position: 4
+---
+
+This page presents two flowcharts, one for each of two selected user stories. They model the sequence of actions a user performs in SynopStudio and the decisions the system takes along the way, showing how the platform is meant to be used.
+
+## User Story 15 (US15)
+*As a Content Creator, I want to set the theme, audience, duration and format before generating clips, so that the proposals fit my goal and the target social network.*
+
+![flowcharts_us15](/images/flowchart_us15.drawio.png)
+
+The Content Creator accesses SynopStudio, creates a new project. Before the video is uploaded, the system checks that license and authorship have been confirmed. If they have not, project is blocked and the user is told why, and can correct the missing information.
+If they, the user can upload the video. Once the video has been processed (transcription and segmentation), the user defines the theme, audience, duration and target format of the clips. The system validates these parameters and asks the user to correct them if they are not valid. The system the generates clip proposals.
+The user checks whether the proposals fit their goals. If they do, the user share to the social media. If not, the user goes back to the parameters, adjusts them and generate new proposals.
+
+## User Story 18 (US18)
+*As a Content Creator, I want each clip to show the intervals of the original video it was taken from, so that I can check the context before approving it.*
+
+![flowchart_us18](/images/flowchart_us18.drawio.png)
+
+The Content Creator opens a project and the system loads the proposed clips, showing for each one the interval of the original recording it was taken from.
+The user then chooses whether to analyse the original video segment. If so, the system plays the original around the cut, before and after the selected interval, so the user can see what was left out.
+Finally, the user decides on the clip: 
+- **Approved:** the clip is explicitly approved. Only approved clips can be rendered and exported (FR15).
+- **Adjust points:** the user changes the start and end points and goes back to the source intervals to check them again.
+- **Rejected:** the clip is discarded and this flow ends.

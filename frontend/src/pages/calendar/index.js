@@ -1,71 +1,36 @@
 import React, { useState } from 'react';
 import Layout from '@theme/Layout';
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+import Heading from '@theme/Heading';
 import styles from './index.module.css';
+import PdfViewer from '../../components/PdfViewer';
 
 export default function Calendar() {
-  const [tab, setTab] = useState('calendar');
 
   return (
-    <Layout title="Calendar" description="SynopStudio Calendar and Task List.">
-      <main className={styles.page}>
-        <div className={styles.tabs}>
-          <button
-            className={`button ${tab === 'calendar' ? 'button--primary' : 'button--secondary'}`}
-            onClick={() => setTab('calendar')}
-          >
-            Calendar
-          </button>
-          <button
-            className={`button ${tab === 'tasks' ? 'button--primary' : 'button--secondary'}`}
-            onClick={() => setTab('tasks')}
-          >
-            TaskList
-          </button>
-        </div>
-
-        {tab === 'calendar' && (
-          <div>
-            <div className={styles.header}>
-              <h1 className={styles.title}>Calendar</h1>
-              <a
-                href="/docs/files/PEI-Calendar-SynopStudio.pdf"
-                download
-                className={`button button--primary ${styles.downloadBtn}`}
-              >
-                Download Calendar (PDF)
-              </a>
-            </div>
-            <p>Below you can check the project's calendar (PDF).</p>
-            <iframe
-              src="/docs/files/PEI-Calendar-SynopStudio.pdf#toolbar=0&navpanes=0&scrollbar=0"
-              className={styles.viewer}
-              title="Calendar"
+    <Layout title="Calendar" description="SynopStudio calendar and task list.">
+      <main className={`container ${styles.page}`}>
+        <Heading as="h1" className={styles.title}>Calendar and Task List</Heading>
+        <p className={styles.intro}>The project calendar and the current task list, as PDFs.</p>
+        <Tabs queryString="view" lazy>
+          <TabItem value="calendar" label="Calendar" default>
+            <PdfViewer
+              title="Project Calendar"
+              src="/docs/files/PEI-Calendar-SynopStudio.pdf"
+              downloadName="PEI-Calendar-SynopStudio.pdf"
+              height={800}
             />
-          </div>
-        )}
-
-        {tab === 'tasks' && (
-          <div>
-            <div className={styles.header}>
-              <h1 className={styles.title}>Task List</h1>
-              <a
-                href="/docs/files/PEI-Tasklist-SynopStudio.pdf"
-                target="_blank"
-                rel="noopener noreferrer"
-                download
-                className={`button button--primary ${styles.downloadBtn}`}
-              >
-                Download Task List (PDF)
-              </a>
-            </div>
-            <p>Below you can check our task list (PDF).</p>
-            <iframe
-              src="/docs/files/PEI-Tasklist-SynopStudio.pdf#toolbar=0&navpanes=0&scrollbar=0"
-              className={styles.viewer}
+          </TabItem>
+          <TabItem value="tasks" label="Task list">
+            <PdfViewer
               title="Task List"
+              src="/docs/files/PEI-Tasklist-SynopStudio.pdf"
+              downloadName="PEI-Tasklist-SynopStudio.pdf"
+              height={800}
             />
-          </div>
-        )}
+          </TabItem>
+        </Tabs>
       </main>
     </Layout>
   );

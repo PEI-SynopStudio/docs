@@ -1,63 +1,26 @@
+---
+title: Milestone 1 - Inception
+sidebar_label: M1 - Inception
+sidebar_position: 1
+description: Report and presentation slides for the Milestone 1
+---
+
+import PdfViewer from '@site/src/components/PdfViewer';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-# Milestone 1 - Inception
-
-Please find below the report and the accompanying slides used in the presentation
+Below you can find the report and the slides used in the presentation.
 
 ## Report
-<div style={{ width: '100%', height: '800px', margin: '2rem 0' }}>
-  <iframe
-    src={useBaseUrl('/reports/PEI-Milestone1-SynopStudio.pdf')}
-    width="100%"
-    height="100%"
-    style={{ border: '1px solid var(--ifm-color-emphasis-300)', borderRadius: '8px' }}
-    title="Milestone 1 PDF"
-  />
-</div>
 
-<div style={{ margin: '1.5rem 0', display: 'flex', gap: '1rem' }}>
-  <a 
-    className="button button--primary button--md" 
-    href={useBaseUrl('/reports/PEI-Milestone1-SynopStudio.pdf')} 
-    target="_blank" 
-    rel="noopener noreferrer"
-  >
-    Open Report (PDF)
-  </a>
-  <a 
-    className="button button--secondary button--md" 
-    href={useBaseUrl('/reports/PEI-Milestone1-SynopStudio.pdf')} 
-    download="SynopStudio_Milestone1.pdf"
-  >
-    Download Report (PDF)
-  </a>
-</div>
+<PdfViewer
+  title="Milestone 1 report"
+  src={useBaseUrl("/reports/PEI-Milestone1-SynopStudio.pdf")}
+  downloadName="SynopStudio_Milestone1.pdf"
+/>
 
 ## Slides
-<div style={{ width: '100%', height: '600px', margin: '1.5rem 0' }}>
-  <iframe
-    src={useBaseUrl('/slides/PEI-MS1-Slides.pdf')}
-    width="100%"
-    height="100%"
-    style={{ border: '1px solid var(--ifm-color-emphasis-300)', borderRadius: '8px' }}
-    title="Milestone 1 Slides"
-  />
-</div>
-
-<div style={{ margin: '1.5rem 0', display: 'flex', gap: '1rem' }}>
-  <a
-    className="button button--primary button--md"
-    href={useBaseUrl('/slides/PEI-MS1-Slides.pdf')}
-    target="_blank"
-    rel="noopener noreferrer"
-  >
-    Open Slides (PDF)
-  </a>
-  <a
-    className="button button--secondary button--md"
-    href={useBaseUrl('/slides/PEI-MS1-Slides.pdf')}
-    download="SynopStudio_Milestone1_Slides.pdf"
-  >
-    Download Slides (PDF)
-  </a>
-</div>
+<PdfViewer
+  title="Milestone 1 slides"
+  src={useBaseUrl('/slides/PEI-MS1-Slides.pdf')}
+  downloadName="SynopStudio_Milestone1_Slides.pdf"
+/>

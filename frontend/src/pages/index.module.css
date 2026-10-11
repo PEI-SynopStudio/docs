@@ -1,23 +1,88 @@
-/**
- * CSS files with the .module.css suffix will be treated as CSS modules
- * and scoped locally.
- */
+.tagline {
+  font-size: 1.35rem;
+  font-weight: 500;
+  max-width: 36rem;
+  margin: 0.5rem auto 0.75rem;
+}
 
-.heroBanner {
+.university {
+  font-size: 1rem;
+  opacity: 0.85;
+  margin: 0;
+}
+
+.highlightsSection {
   padding: 4rem 0;
-  text-align: center;
-  position: relative;
-  overflow: hidden;
 }
 
-@media screen and (max-width: 996px) {
-  .heroBanner {
-    padding: 2rem;
-  }
+.highlights {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.5rem;
 }
 
-.buttons {
+.highlights li {
+  margin: 0;
   display: flex;
-  align-items: center;
-  justify-content: center;
+}
+
+.highlight {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  padding: 1.75rem 1.5rem;
+  color: inherit;
+  border-radius: 12px;
+}
+
+.highlight:hover {
+  color: inherit;
+  text-decoration: none;
+}
+
+.icon {
+  font-size: 2.25rem;
+  line-height: 1;
+  margin-bottom: 0.5rem;
+}
+
+.highlightTitle {
+  margin: 0;
+}
+
+.highlightText {
+  color: var(--ifm-color-emphasis-700);
+}
+
+.about {
+  padding: 4rem 0;
+  background: var(--sy-navy-dark);
+  color: var(--sy-on-dark-muted);
+}
+
+.aboutTitle {
+  text-align: center;
+  color: var(--sy-on-dark);
+  font-size: 2.4rem;
+  margin-bottom: 1.5rem;
+}
+
+.aboutText {
+  max-width: 44rem;
+  margin: 0 auto 3.5rem;
+  font-size: 1.1rem;
+  line-height: 1.65;
+}
+
+.aboutText p:last-child {
+  margin-bottom: 0;
+}
+
+.aboutSection {
+  padding: 4rem 0;
+  background-color: var(--sy-navy-dark);
 }

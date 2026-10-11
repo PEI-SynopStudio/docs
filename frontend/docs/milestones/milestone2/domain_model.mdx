@@ -1,0 +1,35 @@
+---
+title: Domain Model
+sidebar_position: 3
+---
+
+
+## Overview
+![Domain Model](/images/SynopStudio_DomainModel.jpeg)
+*Figure 1: SynopStudio Domain Model*
+
+
+The domain model centers on a **Project** as the aggregate root, owned by a **User**. Each project contains a **MediaAsset**, which containing an **AudioTrack** and a **Transcript**. **Transcripts** are decomposed into **TranscriptSegments** attributed to **Speakers**, and organized into **Topics**. **Documents** provide auxiliary context and produce a **Keyword** lexicon.
+
+
+## Components
+
+**User:** userId, email, name, createdAt, (Optional) institution
+
+**Project:** projectId, title, author, Speakers, recordingDate, licenseType, copyrightNotice, status, createdAt, uploadedAt
+
+**Document:** documentId, filename, fileType, extractedText, uploadedAt, isIndexed
+
+**Keyword:** keyword, term, category, weight
+
+**MediaAsset:** assetId, sourceType, sourceUrl, format, codec, duration, resolution, proxyUrl, status, title, startTime, endTime, aspectRatio, captionsUrl, relevanceScore, highlightScore, renderStatus
+
+**Speaker:** speakerId, label, voiceProfile, confidence
+
+**Topic:** topicId, label, summary, startTime, endTime
+
+**AudioTrack:** audioId, sampleRate, channels, format, waveformUrl
+
+**Transcript:** transcriptId, language, fullText, wordTimestamps, generatedAt
+
+**TranscriptSegment:** segmentId, startTime, endTime, text, confidence, speakerId

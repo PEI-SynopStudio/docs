@@ -1,0 +1,73 @@
+---
+title: Archicteture
+sidebar_position: 2
+---
+
+import PdfViewer from '@site/src/components/PdfViewer';
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
+## Overview
+
+<PdfViewer
+  title="Development Diagram"
+  src={useBaseUrl("/files/SynopStudio_developmentdiagram.drawio.pdf")}
+  downloadName="SynopStudio_developmentdiagram.drawio.pdf"
+/>
+
+
+## Components
+
+The system has two fundamental aspects: an interactive side, where users register projects, review transcripts, edit clips and approve results, and a compute-intensive side, where long-form videos of up to four hours are ingested, transcribed, segmented, summarised and rendered. The architecture keeps these two aspects separate. 
+The Backend handles requests and business rules, and delegates the heavy processing to a set of specialised Workers through a Message Broker. This keeps the interface responsive while long jobs run in the background, as required by the non-functional requirements.
+
+The Frontend and the Reverse Proxy sit outside the Docker environment. 
+Everything else (Identity Provider, Backend, Message Broker, Workers and the persistence layer) runs inside it, so the whole server side can be deployed and reproduced consistently. 
+Third-party services (email, video sources and AI models) are outside the system boundary and are reached only through the Backend.
+
+### Frontend (React + Typescript)
+O Frontend é uma aplicação web desenvolvido em **React com Typescript**. É a única parte que interage com o utilizador. 
+Comunica com o sistema através do Reverse Proxy, recorrendo a pedidos HTTP para o API REST e uma conexão WebSocket para receber as notificações atualizadas em tempo real.
+O Frontend é deployed fora do ambiente docker.
+
+### Reverse Proxy (Traefik)
+O Reverse Proxy é responsável por comunicar o frontend com o backend, através de pedidos HTTP. Permite redirecionar o login do utilizador para o Identity Provider.
+É desenvolvido através do **Traefik**.
+
+### Identity Provider (Keycloak)
+A autenticação do utilizador é responsável pelo Identity Provider. Assim, a plataforma não precisa de guardar as credenciais ou implementar a lógica de login a si mesma. 
+Quando o utilizador faz o login, o Reverse Proxy redireciona o caminho do pedido para o Identity Provider, que autentica o utilizador e devolve um token. 
+O Frontend depois envia esse token em cada pedido e o Backend o valida no **Keycloak** do Identity Provider.
+
+### Backend (FastAPI + Python)
+
+
+
+### Persistence Layer (PostgreSQL and MinIO)
+A Camada de persistência é constituída por duas componentes: uma base de dados relacional e um Object Storage.
+- **Relational Database** (PostgreSQL): Guarda os dados dos projetos, os metadados, as licenças e os direitos de autor, as transcrições, os segmentos e os clips. 
+- **Object Storage** (MinIO): Guarda os media assets com maior tamanho como os vídeos originais, o audio, os clips e os documentos auxiliares.
+
+O Backend escreve e lê diretamente nas duas componentes enquanto os Workers escrevem apenas na Object Storage através do protocolo S3, evitando que os grandes ficheiros viajem pela Message Broker ou pela API.
+
+### Message Broker (RabbitMQ)
+O Message Broker, desenvolvido em **RabbitMQ**, é responsável por enfileirar tarefas. Permite dividir o Backend dos Workers. 
+O Backend publica uma mensagem AMQP e os Workers consomem. Quando a fase acaba, o Worker publica os resultados via AMQP e o Backend consome e atualiza o estado do projeto.
+
+### Workers (Python, Whisper and FFmpeg)
+Os Workers são módulos de processamento independentes, cada um responsável por uma fase da pipeline. São desenvolvidos em Python.
+
+1. **Ingestion**: 
+2. **Document Parsing**:
+3. **Audio and Speech**:
+4. **AI and summarization**:
+5. **Highlight Scoring**:
+6. **Video Rendering and Reframing**:
+
+### External API
+Este bloco contém APIs externas do sistema que serão utilizadas. Estão fora do ambiente Docker.
+- **Email**: Permite associar o email no login do utilizador e receber notificações.
+- **Video Sources**: Plataformas de vídeo autorizadas para fazer o upload do vídeo pelo link ou partilhar os clips desenvolvidos.
+- **AI Models**: Modelos de AI que permitem ajudar os workers a processar o vídeo.
+
+O Backend é o ponto de integração com estes serviços: envia notificações por email e troca dados e eventos com outros sistemas externos.
+

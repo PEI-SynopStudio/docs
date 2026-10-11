@@ -20,6 +20,12 @@ const config = {
     locales: ['en'],
   },
 
+  markdown: {
+    mermaid: true,
+  },
+
+  themes: ['@docusaurus/theme-mermaid'],
+
   presets: [
     [
       'classic',
@@ -43,6 +49,13 @@ const config = {
       respectPrefersColorScheme: true,
     },
 
+    docs: {
+      sidebar: {
+        hideable: true,
+        autoCollapseCategories: false,
+      },
+    },
+
     navbar: {
       title: 'SynopStudio',
       logo: {
@@ -51,6 +64,7 @@ const config = {
       },
       //style: 'dark',
       items: [
+        /*
         {
           type: 'dropdown',
           position: 'left',
@@ -61,6 +75,13 @@ const config = {
             //{type: "doc", docId: "milestones/milestone3", label: "MS3 - Digital Accessibility and Usability (Construction)"},
             //{type: "doc", docId: "milestones/milestone4", label: "MS4 - MVP (Construction)"},
           ],
+        },
+        */
+        {
+          type: 'docSidebar',
+          sidebarId: 'milestonesSidebar',
+          position: 'left',
+          label: 'Milestones',
         },
         {
           type: 'docSidebar',
