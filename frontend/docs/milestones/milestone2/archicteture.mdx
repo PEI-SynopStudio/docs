@@ -1,5 +1,5 @@
 ---
-title: Archicteture
+title: Architecture
 sidebar_position: 2
 ---
 
@@ -14,60 +14,87 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
   downloadName="SynopStudio_developmentdiagram.drawio.pdf"
 />
 
-
-## Components
-
-The system has two fundamental aspects: an interactive side, where users register projects, review transcripts, edit clips and approve results, and a compute-intensive side, where long-form videos of up to four hours are ingested, transcribed, segmented, summarised and rendered. The architecture keeps these two aspects separate. 
-The Backend handles requests and business rules, and delegates the heavy processing to a set of specialised Workers through a Message Broker. This keeps the interface responsive while long jobs run in the background, as required by the non-functional requirements.
+The system has two fundamental aspects: an interactive side, where users register projects, review transcripts, edit clips and approve results, and a compute-intensive side, where long-form videos of up to four hours are ingested, transcribed, segmented, summarised and rendered. 
+The architecture keeps these two aspects separate. The Backend handles requests and business rules, and delegates the heavy processing to a set of specialised Workers through a Message Broker. 
+This keeps the interface responsive while long jobs run in the background, as required by the non-functional requirements.
 
 The Frontend and the Reverse Proxy sit outside the Docker environment. 
 Everything else (Identity Provider, Backend, Message Broker, Workers and the persistence layer) runs inside it, so the whole server side can be deployed and reproduced consistently. 
 Third-party services (email, video sources and AI models) are outside the system boundary and are reached only through the Backend.
 
-### Frontend (React + Typescript)
-O Frontend é uma aplicação web desenvolvido em **React com Typescript**. É a única parte que interage com o utilizador. 
-Comunica com o sistema através do Reverse Proxy, recorrendo a pedidos HTTP para o API REST e uma conexão WebSocket para receber as notificações atualizadas em tempo real.
-O Frontend é deployed fora do ambiente docker.
+## Components
+
+### Frontend (React + TypeScript)
+
+The Frontend is a web application built with **React** and **TypeScript**, and the only part of the system the user interacts with. 
+It communicates with the system through the Reverse Proxy, using HTTP requests for the REST API and a WebSocket connection to receive real-time notifications. 
+It is deployed outside the Docker environment.
 
 ### Reverse Proxy (Traefik)
-O Reverse Proxy é responsável por comunicar o frontend com o backend, através de pedidos HTTP. Permite redirecionar o login do utilizador para o Identity Provider.
-É desenvolvido através do **Traefik**.
+
+The Reverse Proxy, built with **Traefik**, connects the Frontend to the Backend and redirects the user's login to the Identity Provider. 
+Like the Frontend, it is deployed outside the Docker environment.
 
 ### Identity Provider (Keycloak)
-A autenticação do utilizador é responsável pelo Identity Provider. Assim, a plataforma não precisa de guardar as credenciais ou implementar a lógica de login a si mesma. 
-Quando o utilizador faz o login, o Reverse Proxy redireciona o caminho do pedido para o Identity Provider, que autentica o utilizador e devolve um token. 
-O Frontend depois envia esse token em cada pedido e o Backend o valida no **Keycloak** do Identity Provider.
+
+User authentication is handled by the Identity Provider (**Keycloak**), so the platform does not store credentials or implement login logic itself. 
+When a user logs in, the Reverse Proxy redirects the request to the Identity Provider, which authenticates the user and returns a token. 
+The Frontend then sends this token with every request, and the Backend validates it against Keycloak. 
+
 
 ### Backend (FastAPI + Python)
 
+The Backend is the core of the system, built with **Python** and **FastAPI**. 
+It has three components: API, Business Logic and WebSockets.
 
+- **API.** Contains the REST routers that receive the HTTP requests from the Reverse Proxy, validate the input and the token, and invoke the Business Logic services. The endpoints are documented with OpenAPI/Swagger.
+- **Business Logic.**
+  - *Projects*: project data, metadata, licences and copyright, and project state.
+  - *Media and Upload*: upload sessions, links and auxiliary documents.
+  - *Transcripts*: synchronised transcripts and speakers.
+  - *Segments*: topic segmentation.
+  - *Clips*: summarisation settings and clip proposals.
+  - *Editing*: timeline and edited transcripts.
+- **WebSockets.** When the Business Logic triggers an event, the WebSocket component notifies the user in real time.
+
+The Backend enforces the business rules of the platform, such as blocking the processing pipeline until licence and authorship are confirmed, and keeping every clip traceable to its original position in the source recording. 
+It publishes jobs to the Message Broker, consumes the results published by the Workers and persists them. It also stores data in the Relational Database and the Object Storage, sends notifications by email and exchanges events and data with the external services.
 
 ### Persistence Layer (PostgreSQL and MinIO)
-A Camada de persistência é constituída por duas componentes: uma base de dados relacional e um Object Storage.
-- **Relational Database** (PostgreSQL): Guarda os dados dos projetos, os metadados, as licenças e os direitos de autor, as transcrições, os segmentos e os clips. 
-- **Object Storage** (MinIO): Guarda os media assets com maior tamanho como os vídeos originais, o audio, os clips e os documentos auxiliares.
 
-O Backend escreve e lê diretamente nas duas componentes enquanto os Workers escrevem apenas na Object Storage através do protocolo S3, evitando que os grandes ficheiros viajem pela Message Broker ou pela API.
+The persistence layer has two components: a relational database and an object storage.
+
+- **Relational Database** (**PostgreSQL**): stores project data, metadata, licences and copyright, transcripts and segments.
+- **Object Storage** (**MinIO**): stores the larger media assets, such as the original videos, audio, clips and auxiliary documents.
+
+The Backend reads from and writes to both components, while the Workers only access the Object Storage, through the S3 protocol. 
+This prevents large files from travelling through the Message Broker or the API.
 
 ### Message Broker (RabbitMQ)
-O Message Broker, desenvolvido em **RabbitMQ**, é responsável por enfileirar tarefas. Permite dividir o Backend dos Workers. 
-O Backend publica uma mensagem AMQP e os Workers consomem. Quando a fase acaba, o Worker publica os resultados via AMQP e o Backend consome e atualiza o estado do projeto.
+
+The Message Broker, built with **RabbitMQ**, manages the task queues and decouples the Backend from the Workers. 
+The Backend publishes a job as an AMQP message and a Worker consumes it. When a stage finishes, the Worker publishes its result through AMQP, and the Backend consumes it and updates the project state. 
 
 ### Workers (Python, Whisper and FFmpeg)
-Os Workers são módulos de processamento independentes, cada um responsável por uma fase da pipeline. São desenvolvidos em Python.
 
-1. **Ingestion**: 
-2. **Document Parsing**:
-3. **Audio and Speech**:
-4. **AI and summarization**:
-5. **Highlight Scoring**:
-6. **Video Rendering and Reframing**:
+The Workers are independent processing modules, each responsible for one stage of the pipeline. 
+They are built with **Python**, and use **FFmpeg** to encode and decode media and **FFprobe** to check file integrity.
+
+1. **Ingestion**: checks the integrity of the video, extracts the audio and generates a proxy video.
+2. **Document Parsing**: extracts text and domain terminology (keywords and acronyms) from the auxiliary documents.
+3. **Audio and Speech**: uses **Whisper** to produce synchronised transcripts and identifies who is speaking in each segment.
+4. **AI and Summarization**: segments the content and generates summaries according to the user's settings.
+5. **Highlight Scoring**: scores the candidate segments and records the rationale for each proposal.
+6. **Video Rendering and Reframing**: reframes the video according to the user's settings and renders the final clips with subtitles.
+
+Each Worker consumes its jobs from the Message Broker, reads and writes media in the Object Storage, and publishes its results back to the broker. 
 
 ### External API
-Este bloco contém APIs externas do sistema que serão utilizadas. Estão fora do ambiente Docker.
-- **Email**: Permite associar o email no login do utilizador e receber notificações.
-- **Video Sources**: Plataformas de vídeo autorizadas para fazer o upload do vídeo pelo link ou partilhar os clips desenvolvidos.
-- **AI Models**: Modelos de AI que permitem ajudar os workers a processar o vídeo.
 
-O Backend é o ponto de integração com estes serviços: envia notificações por email e troca dados e eventos com outros sistemas externos.
+This block contains the third-party services used by the system, all outside the Docker environment.
 
+- **Email**: sends notifications to the user, such as job completion or failure.
+- **Video Sources**: authorised video platforms from which a video can be imported through a link.
+- **AI Models**: external AI models that help process the content.
+
+The Backend is the integration point with these services: it sends notifications by email and exchanges events and data with the video platforms and the AI models.
