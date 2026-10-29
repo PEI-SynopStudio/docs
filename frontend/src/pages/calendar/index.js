@@ -11,22 +11,22 @@ export default function Calendar() {
   return (
     <Layout title="Calendar" description="SynopStudio calendar and task list.">
       <main className={`container ${styles.page}`}>
-        <Heading as="h1" className={styles.title}>Calendar and Task List</Heading>
-        <p className={styles.intro}>The project calendar and the current task list, as PDFs.</p>
+        <Heading as="h1" className={styles.title}>Task List and Calendar</Heading>
+        <p className={styles.intro}>The current task list and the project calendar, as PDFs.</p>
         <Tabs queryString="view" lazy>
-          <TabItem value="calendar" label="Calendar" default>
-            <PdfViewer
-              title="Project Calendar"
-              src="/docs/files/PEI-Calendar-SynopStudio.pdf"
-              downloadName="PEI-Calendar-SynopStudio.pdf"
-              height={800}
-            />
-          </TabItem>
-          <TabItem value="tasks" label="Task list">
+          <TabItem value="tasks" label="Task list" default>
             <PdfViewer
               title="Task List"
               src="/docs/files/PEI-Tasklist-SynopStudio.pdf"
               downloadName="PEI-Tasklist-SynopStudio.pdf"
+              height={800}
+            />
+          </TabItem>
+          <TabItem value="calendar" label="Calendar">
+            <PdfViewer
+              title="Project Calendar"
+              src="/docs/files/PEI-Calendar-SynopStudio.pdf"
+              downloadName="PEI-Calendar-SynopStudio.pdf"
               height={800}
             />
           </TabItem>

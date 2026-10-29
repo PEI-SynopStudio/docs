@@ -58,12 +58,12 @@ It has three components: API, Business Logic and WebSockets.
 The Backend enforces the business rules of the platform, such as blocking the processing pipeline until licence and authorship are confirmed, and keeping every clip traceable to its original position in the source recording. 
 It publishes jobs to the Message Broker, consumes the results published by the Workers and persists them. It also stores data in the Relational Database and the Object Storage, sends notifications by email and exchanges events and data with the external services.
 
-### Persistence Layer (PostgreSQL and MinIO)
+### Persistence Layer (PostgreSQL and SeaweedFS)
 
 The persistence layer has two components: a relational database and an object storage.
 
 - **Relational Database** (**PostgreSQL**): stores project data, metadata, licences and copyright, transcripts and segments.
-- **Object Storage** (**MinIO**): stores the larger media assets, such as the original videos, audio, clips and auxiliary documents.
+- **Object Storage** (**SeaweedFS**): stores the larger media assets, such as the original videos, audio, clips and auxiliary documents.
 
 The Backend reads from and writes to both components, while the Workers only access the Object Storage, through the S3 protocol. 
 This prevents large files from travelling through the Message Broker or the API.
