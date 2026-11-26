@@ -1,0 +1,28 @@
+{
+  "id": "minutes/minutes1",
+  "title": "Meeting 1",
+  "description": "1. Information",
+  "source": "@site/docs/minutes/minutes1.mdx",
+  "sourceDirName": "minutes",
+  "slug": "/minutes/minutes1",
+  "permalink": "/docs/minutes/minutes1",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 1,
+  "frontMatter": {
+    "title": "Meeting 1",
+    "sidebar_label": "Meeting 1 (23 Sep)",
+    "sidebar_position": 1
+  },
+  "sidebar": "minutesSidebar",
+  "previous": {
+    "title": "Meeting minutes",
+    "permalink": "/docs/minutes"
+  },
+  "next": {
+    "title": "Meeting 2 (28 Sep)",
+    "permalink": "/docs/minutes/minutes2"
+  }
+}

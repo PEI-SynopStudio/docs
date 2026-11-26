@@ -1,0 +1,29 @@
+{
+  "id": "milestones/milestone2/index",
+  "title": "Milestone 2 - Elaboration",
+  "description": "Report and presentation slides for the Milestone 2",
+  "source": "@site/docs/milestones/milestone2/index.mdx",
+  "sourceDirName": "milestones/milestone2",
+  "slug": "/milestones/milestone2/",
+  "permalink": "/docs/milestones/milestone2/",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 2,
+  "frontMatter": {
+    "title": "Milestone 2 - Elaboration",
+    "sidebar_label": "Milestone 2 - Elaboration",
+    "sidebar_position": 2,
+    "description": "Report and presentation slides for the Milestone 2"
+  },
+  "sidebar": "milestonesSidebar",
+  "previous": {
+    "title": "M1 - Inception",
+    "permalink": "/docs/milestones/milestone1"
+  },
+  "next": {
+    "title": "Architecture",
+    "permalink": "/docs/milestones/milestone2/archicteture"
+  }
+}

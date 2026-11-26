@@ -1,0 +1,27 @@
+{
+  "id": "milestones/milestone2/domain_model",
+  "title": "Domain Model",
+  "description": "Overview",
+  "source": "@site/docs/milestones/milestone2/domain_model.mdx",
+  "sourceDirName": "milestones/milestone2",
+  "slug": "/milestones/milestone2/domain_model",
+  "permalink": "/docs/milestones/milestone2/domain_model",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 3,
+  "frontMatter": {
+    "title": "Domain Model",
+    "sidebar_position": 3
+  },
+  "sidebar": "milestonesSidebar",
+  "previous": {
+    "title": "Architecture",
+    "permalink": "/docs/milestones/milestone2/archicteture"
+  },
+  "next": {
+    "title": "Flowcharts",
+    "permalink": "/docs/milestones/milestone2/flowcharts"
+  }
+}

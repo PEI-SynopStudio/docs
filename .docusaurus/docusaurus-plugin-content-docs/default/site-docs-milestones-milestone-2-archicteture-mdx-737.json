@@ -1,0 +1,27 @@
+{
+  "id": "milestones/milestone2/archicteture",
+  "title": "Architecture",
+  "description": "Overview",
+  "source": "@site/docs/milestones/milestone2/archicteture.mdx",
+  "sourceDirName": "milestones/milestone2",
+  "slug": "/milestones/milestone2/archicteture",
+  "permalink": "/docs/milestones/milestone2/archicteture",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 2,
+  "frontMatter": {
+    "title": "Architecture",
+    "sidebar_position": 2
+  },
+  "sidebar": "milestonesSidebar",
+  "previous": {
+    "title": "Milestone 2 - Elaboration",
+    "permalink": "/docs/milestones/milestone2/"
+  },
+  "next": {
+    "title": "Domain Model",
+    "permalink": "/docs/milestones/milestone2/domain_model"
+  }
+}

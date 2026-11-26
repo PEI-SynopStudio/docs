@@ -1,0 +1,28 @@
+{
+  "id": "minutes/minutes9",
+  "title": "Meeting 9",
+  "description": "1. Information",
+  "source": "@site/docs/minutes/minutes9.mdx",
+  "sourceDirName": "minutes",
+  "slug": "/minutes/minutes9",
+  "permalink": "/docs/minutes/minutes9",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 9,
+  "frontMatter": {
+    "title": "Meeting 9",
+    "sidebar_label": "Meeting 9 (22 Oct)",
+    "sidebar_position": 9
+  },
+  "sidebar": "minutesSidebar",
+  "previous": {
+    "title": "Meeting 8 (21 Oct)",
+    "permalink": "/docs/minutes/minutes8"
+  },
+  "next": {
+    "title": "Meeting 10 (29 Oct)",
+    "permalink": "/docs/minutes/minutes10"
+  }
+}

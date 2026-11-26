@@ -1,0 +1,28 @@
+{
+  "id": "minutes/minutes13",
+  "title": "Meeting 13",
+  "description": "1. Information",
+  "source": "@site/docs/minutes/minutes13.mdx",
+  "sourceDirName": "minutes",
+  "slug": "/minutes/minutes13",
+  "permalink": "/docs/minutes/minutes13",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 13,
+  "frontMatter": {
+    "title": "Meeting 13",
+    "sidebar_label": "Meeting 13 (18 Nov)",
+    "sidebar_position": 13
+  },
+  "sidebar": "minutesSidebar",
+  "previous": {
+    "title": "Meeting 12 (9 Nov)",
+    "permalink": "/docs/minutes/minutes12"
+  },
+  "next": {
+    "title": "Meeting 14 (23 Nov)",
+    "permalink": "/docs/minutes/minutes14"
+  }
+}

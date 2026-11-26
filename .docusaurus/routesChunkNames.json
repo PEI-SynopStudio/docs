@@ -1,0 +1,175 @@
+{
+  "/docs/__docusaurus/debug-e58": {
+    "__comp": "__comp---theme-debug-config-23-a-2ff",
+    "__context": {
+      "plugin": "plugin---docs-docusaurus-debugb-38-c84"
+    }
+  },
+  "/docs/__docusaurus/debug/config-2ce": {
+    "__comp": "__comp---theme-debug-config-23-a-2ff",
+    "__context": {
+      "plugin": "plugin---docs-docusaurus-debugb-38-c84"
+    }
+  },
+  "/docs/__docusaurus/debug/content-11b": {
+    "__comp": "__comp---theme-debug-contentba-8-ce7",
+    "__context": {
+      "plugin": "plugin---docs-docusaurus-debugb-38-c84"
+    },
+    "__props": "__props---docs-docusaurus-debug-content-344-8d5"
+  },
+  "/docs/__docusaurus/debug/globalData-f13": {
+    "__comp": "__comp---theme-debug-global-dataede-0fa",
+    "__context": {
+      "plugin": "plugin---docs-docusaurus-debugb-38-c84"
+    }
+  },
+  "/docs/__docusaurus/debug/metadata-bff": {
+    "__comp": "__comp---theme-debug-site-metadata-68-e-3d4",
+    "__context": {
+      "plugin": "plugin---docs-docusaurus-debugb-38-c84"
+    }
+  },
+  "/docs/__docusaurus/debug/registry-830": {
+    "__comp": "__comp---theme-debug-registry-679-501",
+    "__context": {
+      "plugin": "plugin---docs-docusaurus-debugb-38-c84"
+    }
+  },
+  "/docs/__docusaurus/debug/routes-13e": {
+    "__comp": "__comp---theme-debug-routes-946-699",
+    "__context": {
+      "plugin": "plugin---docs-docusaurus-debugb-38-c84"
+    }
+  },
+  "/docs/calendar/-555": {
+    "__comp": "__comp---site-src-pages-calendar-index-js-45-c-d5e",
+    "__context": {
+      "plugin": "plugin---docs-calendar-a-74-753"
+    },
+    "config": "config---docs-calendar-5-e-9-3ca"
+  },
+  "/docs/markdown-page-1e2": {
+    "__comp": "__comp---theme-mdx-page-1-f-3-b90",
+    "__context": {
+      "plugin": "plugin---docs-calendar-a-74-753"
+    },
+    "content": "content---docs-markdown-page-4-c-6-c4f"
+  },
+  "/docs/-6fa": {
+    "__comp": "__comp---site-src-pages-index-jsc-4-f-f99",
+    "__context": {
+      "plugin": "plugin---docs-calendar-a-74-753"
+    },
+    "config": "config---docs-calendar-5-e-9-3ca"
+  },
+  "/docs/-b40": {
+    "__comp": "__comp---theme-docs-root-5-e-9-0b6",
+    "__context": {
+      "plugin": "plugin---docs-aba-4f5"
+    }
+  },
+  "/docs/-88f": {
+    "__comp": "__comp---theme-doc-version-roota-7-b-5de",
+    "__props": "__props---docs-11-b-f70"
+  },
+  "/docs/-1d5": {
+    "__comp": "__comp---theme-doc-roota-94-67a"
+  },
+  "/docs/milestones-182": {
+    "__comp": "__comp---theme-doc-category-generated-index-page-14-e-640",
+    "__props": "__props---docs-milestonesaf-1-624"
+  },
+  "/docs/milestones/checkpoint-cc9": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---docs-milestones-checkpoint-0-ad-a2b"
+  },
+  "/docs/milestones/milestone1-873": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---docs-milestones-milestone-120-f-1ae"
+  },
+  "/docs/milestones/milestone2/-afe": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---docs-milestones-milestone-2-822-d99"
+  },
+  "/docs/milestones/milestone2/archicteture-232": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---docs-milestones-milestone-2-archicteture-737-633"
+  },
+  "/docs/milestones/milestone2/domain_model-d50": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---docs-milestones-milestone-2-domain-model-988-51e"
+  },
+  "/docs/milestones/milestone2/flowcharts-b99": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---docs-milestones-milestone-2-flowcharts-6-ff-842"
+  },
+  "/docs/milestones/milestone3-2d3": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---docs-milestones-milestone-37-dd-cfa"
+  },
+  "/docs/minutes-7e9": {
+    "__comp": "__comp---theme-doc-category-generated-index-page-14-e-640",
+    "__props": "__props---docs-minutes-99-e-167"
+  },
+  "/docs/minutes/minutes1-d79": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---docs-minutes-minutes-1066-e70"
+  },
+  "/docs/minutes/minutes10-e46": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---docs-minutes-minutes-10292-196"
+  },
+  "/docs/minutes/minutes11-4c8": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---docs-minutes-minutes-11-ee-1-b44"
+  },
+  "/docs/minutes/minutes12-58a": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---docs-minutes-minutes-12683-7ee"
+  },
+  "/docs/minutes/minutes13-218": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---docs-minutes-minutes-13-d-38-a12"
+  },
+  "/docs/minutes/minutes14-584": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---docs-minutes-minutes-14975-63a"
+  },
+  "/docs/minutes/minutes15-824": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---docs-minutes-minutes-15-f-2-a-4ee"
+  },
+  "/docs/minutes/minutes2-17f": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---docs-minutes-minutes-2-b-54-e2c"
+  },
+  "/docs/minutes/minutes3-4c6": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---docs-minutes-minutes-343-a-0da"
+  },
+  "/docs/minutes/minutes4-24a": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---docs-minutes-minutes-4-ad-0-15b"
+  },
+  "/docs/minutes/minutes5-ec8": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---docs-minutes-minutes-59-bf-01c"
+  },
+  "/docs/minutes/minutes6-615": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---docs-minutes-minutes-6-af-0-c37"
+  },
+  "/docs/minutes/minutes7-b78": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---docs-minutes-minutes-7-b-8-e-65b"
+  },
+  "/docs/minutes/minutes8-0c5": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---docs-minutes-minutes-8-a-8-d-10e"
+  },
+  "/docs/minutes/minutes9-d54": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---docs-minutes-minutes-9-a-26-30c"
+  }
+}

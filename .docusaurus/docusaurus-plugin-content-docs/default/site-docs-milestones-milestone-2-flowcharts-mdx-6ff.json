@@ -1,0 +1,27 @@
+{
+  "id": "milestones/milestone2/flowcharts",
+  "title": "Flowcharts",
+  "description": "User Story 15 (US15)",
+  "source": "@site/docs/milestones/milestone2/flowcharts.mdx",
+  "sourceDirName": "milestones/milestone2",
+  "slug": "/milestones/milestone2/flowcharts",
+  "permalink": "/docs/milestones/milestone2/flowcharts",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 4,
+  "frontMatter": {
+    "title": "Flowcharts",
+    "sidebar_position": 4
+  },
+  "sidebar": "milestonesSidebar",
+  "previous": {
+    "title": "Domain Model",
+    "permalink": "/docs/milestones/milestone2/domain_model"
+  },
+  "next": {
+    "title": "M3 - Construction",
+    "permalink": "/docs/milestones/milestone3"
+  }
+}

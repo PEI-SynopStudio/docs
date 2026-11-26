@@ -1,0 +1,154 @@
+{
+  "docusaurus-plugin-content-docs": {
+    "default": {
+      "path": "/docs/",
+      "versions": [
+        {
+          "name": "current",
+          "label": "Next",
+          "isLast": true,
+          "path": "/docs/",
+          "mainDocId": "milestones/milestone1",
+          "docs": [
+            {
+              "id": "milestones/checkpoint",
+              "path": "/docs/milestones/checkpoint",
+              "sidebar": "milestonesSidebar"
+            },
+            {
+              "id": "milestones/milestone1",
+              "path": "/docs/milestones/milestone1",
+              "sidebar": "milestonesSidebar"
+            },
+            {
+              "id": "milestones/milestone2/archicteture",
+              "path": "/docs/milestones/milestone2/archicteture",
+              "sidebar": "milestonesSidebar"
+            },
+            {
+              "id": "milestones/milestone2/domain_model",
+              "path": "/docs/milestones/milestone2/domain_model",
+              "sidebar": "milestonesSidebar"
+            },
+            {
+              "id": "milestones/milestone2/flowcharts",
+              "path": "/docs/milestones/milestone2/flowcharts",
+              "sidebar": "milestonesSidebar"
+            },
+            {
+              "id": "milestones/milestone2/index",
+              "path": "/docs/milestones/milestone2/",
+              "sidebar": "milestonesSidebar"
+            },
+            {
+              "id": "milestones/milestone3",
+              "path": "/docs/milestones/milestone3",
+              "sidebar": "milestonesSidebar"
+            },
+            {
+              "id": "minutes/minutes1",
+              "path": "/docs/minutes/minutes1",
+              "sidebar": "minutesSidebar"
+            },
+            {
+              "id": "minutes/minutes10",
+              "path": "/docs/minutes/minutes10",
+              "sidebar": "minutesSidebar"
+            },
+            {
+              "id": "minutes/minutes11",
+              "path": "/docs/minutes/minutes11",
+              "sidebar": "minutesSidebar"
+            },
+            {
+              "id": "minutes/minutes12",
+              "path": "/docs/minutes/minutes12",
+              "sidebar": "minutesSidebar"
+            },
+            {
+              "id": "minutes/minutes13",
+              "path": "/docs/minutes/minutes13",
+              "sidebar": "minutesSidebar"
+            },
+            {
+              "id": "minutes/minutes14",
+              "path": "/docs/minutes/minutes14",
+              "sidebar": "minutesSidebar"
+            },
+            {
+              "id": "minutes/minutes15",
+              "path": "/docs/minutes/minutes15",
+              "sidebar": "minutesSidebar"
+            },
+            {
+              "id": "minutes/minutes2",
+              "path": "/docs/minutes/minutes2",
+              "sidebar": "minutesSidebar"
+            },
+            {
+              "id": "minutes/minutes3",
+              "path": "/docs/minutes/minutes3",
+              "sidebar": "minutesSidebar"
+            },
+            {
+              "id": "minutes/minutes4",
+              "path": "/docs/minutes/minutes4",
+              "sidebar": "minutesSidebar"
+            },
+            {
+              "id": "minutes/minutes5",
+              "path": "/docs/minutes/minutes5",
+              "sidebar": "minutesSidebar"
+            },
+            {
+              "id": "minutes/minutes6",
+              "path": "/docs/minutes/minutes6",
+              "sidebar": "minutesSidebar"
+            },
+            {
+              "id": "minutes/minutes7",
+              "path": "/docs/minutes/minutes7",
+              "sidebar": "minutesSidebar"
+            },
+            {
+              "id": "minutes/minutes8",
+              "path": "/docs/minutes/minutes8",
+              "sidebar": "minutesSidebar"
+            },
+            {
+              "id": "minutes/minutes9",
+              "path": "/docs/minutes/minutes9",
+              "sidebar": "minutesSidebar"
+            },
+            {
+              "id": "/milestones",
+              "path": "/docs/milestones",
+              "sidebar": "milestonesSidebar"
+            },
+            {
+              "id": "/minutes",
+              "path": "/docs/minutes",
+              "sidebar": "minutesSidebar"
+            }
+          ],
+          "draftIds": [],
+          "sidebars": {
+            "milestonesSidebar": {
+              "link": {
+                "path": "/docs/milestones",
+                "label": "Milestones"
+              }
+            },
+            "minutesSidebar": {
+              "link": {
+                "path": "/docs/minutes",
+                "label": "Meeting minutes"
+              }
+            }
+          }
+        }
+      ],
+      "breadcrumbs": true
+    }
+  }
+}
